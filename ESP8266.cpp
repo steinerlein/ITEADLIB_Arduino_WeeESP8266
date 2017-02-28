@@ -57,8 +57,9 @@ ESP8266::ESP8266(void)
 
 ESP8266::begin(HardwareSerial &uart, uint32_t baud): m_puart(&uart)
 {
-    m_puart->begin(baud);
-    rx_empty();
+  m_puart = &uart;
+  m_puart->begin(baud);
+  rx_empty();
 }
 #endif
 
